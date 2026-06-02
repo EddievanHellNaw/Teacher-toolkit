@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1|>Group Detail</h1>
+    <p><strong>Name:</strong> {{ group.name }}</p>
+    <p><strong>Subject:</strong> {{ group.subject }}</p>
+    <p><strong>Schedule:</strong> {{ group.schedule }}</p>
+    <p><strong>Created At:</strong> {{ group.created_at }}</p>
+    <p><strong>Total Students:</strong> {{ group.totalStudentsCount }}</p> 
+    <a href="{% url 'group_edit' group.id %}">Edit</a>
+    <a href="{% url 'group_delete' group.id %}">Delete</a>
+    <a href="{% url 'groups_list' %}">Back to Groups List</a>  
+</body>
+</html>

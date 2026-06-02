@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Groups List</h1>
+    <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Schedule</th>
+            <th>Created At</th>
+            <th>Total Students</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in groups %}
+        <tr>
+            <td>{{ group.name }}</td>
+            <td>{{ group.subject }}</td>
+            <td>{{ group.schedule }}</td>
+            <td>{{ group.created_at }}</td>
+            <td>{{ group.totalStudentsCount }}</td>
+            <td><a href="{% url 'group_detail' group.id %}">View Details</a></td>
+        </tr>
+        {% endfor %}
+        <a href="{% url 'group_create' %}">Create New Group</a>
+    </tbody>
+</table>
+</body>
+</html>
